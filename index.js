@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-cid ="" // Kanal idsi
+const cid ="" // Kanal idsi
 client.on('message', msg => {
   if (msg.content === '?kontrol') {
     if (msg.channel.id == cid) {
