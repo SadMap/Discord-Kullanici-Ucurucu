@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`${client.user.tag} Kullanıcı adıyla giriş yapıldı.`);
 });
 const cid ="" // Kanal idsi
 client.on('message', msg => {
@@ -14,8 +14,8 @@ client.on('message', msg => {
         const re = m.filter(user => Date.now() - user.user.createdTimestamp  < 604800000)
         msg.channel.send(re.size)
         re.forEach(y => {
-          y.kick({reasson:"7 Günden Yeni Hesap"})
-          msg.channel.send(`✅ <@${y.id}> | ${y.user.tag} Kicklendi`)
+          y.kick({reasson:"Bu hesap 7 günden daha yeni!"})
+          msg.channel.send(`✅ <@${y.id}> | ${y.user.tag} Sunucudan atıldı!`)
         })
       })
     }
